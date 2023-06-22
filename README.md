@@ -44,7 +44,7 @@
     <h2>Getting Started</h2>
     <p>To run the project locally, follow these steps:</p>
     <ol>
-        <li>Clone the repository: &lt;repository_url&gt;</li>
+        <li>Clone this repository</li>
         <li>Install the required dependencies and tools.</li>
         <li>Set up the database connection in the appsettings.json file.</li>
         <li>Apply the database migrations to create the required schema.</li>
