@@ -1,0 +1,66 @@
+﻿@page
+@model Taghelpers.Pages.SP.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CV_Info[0].first_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CV_Info[0].last_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CV_Info[0].email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CV_Info[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CV_Info[0].grade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CV_Info) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.first_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grade)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+    
+    <form method="post">
+        <input type="submit" value="Download PDF" />
+    </form>
+
+</table>
